@@ -4,7 +4,7 @@ import isLoginReducer from './isLogin';
 
 const allReducers = combineReducers({
   counter: counterReducer,
-  isLOgin: isLoginReducer,
+  isLogin: isLoginReducer,
 });
 
 export default allReducers;

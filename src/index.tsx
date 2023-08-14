@@ -5,6 +5,7 @@ import App from './App';
 // 練習用にtoolkitを使わずにreduxからimportする。
 import { createStore } from 'redux';
 import allReducers from './reducers';
+import { Provider } from 'react-redux';
 
 const store = createStore(
   allReducers,
@@ -17,6 +18,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
+
+export type RootState = ReturnType<typeof store.getState>;
